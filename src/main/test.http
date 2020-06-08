@@ -1,0 +1,7 @@
+POST http://localhost:8083/reg?name=Ilea&login=isethesal&password=123456
+
+###
+
+POST http://localhost:8083/auth?login=isethesal&password=123456
+
+###
