@@ -1,6 +1,5 @@
 package servlet;
 
-import entity.Operations;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,10 +14,10 @@ import java.util.List;
 public class WholeHistoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<String> ahistory = (List<String>) req.getServletContext().getAttribute("ahistory");
-        java.util.Collections.sort(ahistory);
+        List<String> sortList = (List<String>) req.getServletContext().getAttribute("ahistory");
+        java.util.Collections.sort(sortList);
 
-        req.getServletContext().setAttribute("ahistory", ahistory);
+        req.getServletContext().setAttribute("sortList", sortList);
         getServletContext().getRequestDispatcher("/pages/ahistory.jsp").forward(req, resp);
     }
 }

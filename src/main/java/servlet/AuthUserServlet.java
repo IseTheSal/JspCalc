@@ -33,6 +33,7 @@ public class AuthUserServlet extends HttpServlet {
         for (User user : users) {
             if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 req.getSession().setAttribute("currentUser", user);
+                req.getSession().setAttribute("isAuth", true);
                 getServletContext().getRequestDispatcher("/").forward(req, resp);
             }
         }
