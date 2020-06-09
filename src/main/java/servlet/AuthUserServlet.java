@@ -26,7 +26,7 @@ public class AuthUserServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/pages/auth.jsp").forward(req, resp);
         }
         List<User> users = (List<User>) getServletContext().getAttribute("users");
-        if(users.isEmpty()){
+        if (users.isEmpty()) {
             req.setAttribute("message", "User not found.");
             getServletContext().getRequestDispatcher("/pages/auth.jsp").forward(req, resp);
         }
@@ -37,8 +37,8 @@ public class AuthUserServlet extends HttpServlet {
             }
         }
 
-            req.setAttribute("message", "User not found!");
-            getServletContext().getRequestDispatcher("/pages/auth.jsp").forward(req, resp);
+        req.setAttribute("message", "User not found!");
+        getServletContext().getRequestDispatcher("/pages/auth.jsp").forward(req, resp);
 
 
     }

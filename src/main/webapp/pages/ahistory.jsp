@@ -7,6 +7,8 @@
     <title>Whole History</title>
 </head>
 <body>
+
+
 <ul>
     <c:forEach items="${applicationScope.ahistory}" var="item">
         <li>${item}</li>

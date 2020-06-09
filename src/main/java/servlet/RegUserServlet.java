@@ -31,6 +31,7 @@ public class RegUserServlet extends HttpServlet {
                 getServletContext().getRequestDispatcher("/pages/reg.jsp").forward(req, resp);
             }
         }
+
         users.add(user);
         resp.sendRedirect("/");
     }
