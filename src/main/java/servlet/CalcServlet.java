@@ -45,6 +45,7 @@ public class CalcServlet extends HttpServlet {
         List<String> ahistory = (List) req.getServletContext().getAttribute("ahistory");
 
         ahistory.add(opString);
+        ahistory.sort(String::compareTo);
         req.setAttribute("answer", answer);
         getServletContext().getRequestDispatcher("/pages/calculator.jsp").forward(req, resp);
 

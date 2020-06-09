@@ -24,9 +24,12 @@ public class RegUserServlet extends HttpServlet {
         String password = req.getParameter("password");
         User user = new User(name, login, password);
         List<User> users = (List<User>) getServletContext().getAttribute("users");
-        if (users.contains(user)) {
-            req.setAttribute("exist", "This user is already exist");
-            getServletContext().getRequestDispatcher("/pages/reg.jsp").forward(req, resp);
+
+        for (User user1 : users) {
+            if (user1.getLogin().equals(login)) {
+                req.setAttribute("exist", "This user is already exist");
+                getServletContext().getRequestDispatcher("/pages/reg.jsp").forward(req, resp);
+            }
         }
         users.add(user);
         resp.sendRedirect("/");
